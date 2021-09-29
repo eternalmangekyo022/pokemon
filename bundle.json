@@ -1,0 +1,94 @@
+{
+    "rewards": [
+        {
+          "category": "Stardust",
+          "rewards": [
+            {
+              "reward": "✨200✨",
+              "literal": "quests[]=3%2C200%2C0"
+            },
+            {
+              "reward": "✨500✨",
+              "literal": "quests[]=3%2C500%2C0"
+            },
+            {
+              "reward": "✨1000✨",
+              "literal": "quests[]=3%2C1000%2C0"
+            },
+            {
+              "reward": "✨1500✨",
+              "literal": "quests[]=3%2C1500%2C0"
+            },
+            {
+              "reward": "💰All in one💰",
+              "literal": "quests[]=3%2C200%2C0&quests[]=3%2C500%2C0&quests[]=3%2C1000%2C0&quests[]=3%2C1500%2C0"
+            }
+          ]
+        },
+        {
+          "category": "Mega Energy",
+          "filter": "Power up Pokémon 5 times",
+          "rewards": [
+            {
+              "reward": "10x🍃Venusaur🍃",
+              "literal": "quests[]=12%2C0%2C3"
+            },
+            {
+              "reward": "10x🔥Charizard🔥",
+              "literal": "quests[]=12%2C0%2C6"
+            },
+            {
+              "reward": "10x💧Blastoise💧",
+              "literal": "quests[]=12%2C0%2C9"
+            },
+            {
+              "reward": "10x🐞Beedrill🐞",
+              "literal": "quests[]=12%2C0%2C15"
+            },
+            {
+              "reward": "10x💨Pidgeot💨",
+              "literal": "quests[]=12%2C0%2C18"
+            },
+            {
+              "reward": "20x💧Slowbro💧",
+              "literal": "quests[]=12%2C0%2C80"
+            }
+        ]
+        },
+        {
+          "category": "Pokemon Encounter",
+          "rewards": [
+            {
+              "reward": "✨Larvitar✨",
+              "literal": "quests[]=7%2C0%2C246"
+            },
+            {
+              "reward": "✨Dratini✨",
+              "literal": "quests[]=7%2C0%2C147"
+            },
+            {
+              "reward": "✨Spinda✨",
+              "literal": "quests[]=7%2C0%2C327"
+            }
+          ]
+        }
+    ],
+    "urls": [
+        {
+          "name": "🗽New York🗽",
+          "url": "nycpokemap.com/quests.php?"
+        },
+        {
+          "name": "🇨🇦Vancouver🇨🇦",
+          "url": "vanpokemap.com/quests.php?"
+        },
+        {
+          "name": "🇬🇧London🇬🇧",
+          "url": "londonpogomap.com/quests.php?"
+        },
+        {
+          "name": "🇰🇷Singapore🇰🇷",
+          "url": "sgpokemap.com/quests.php?"
+        }
+      ]
+}
