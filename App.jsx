@@ -1,34 +1,9 @@
 import React from "react";
 import "./App.css";
 import { rewards, urls } from "./bundle.json";
-
 import fileDownload from "js-file-download";
 
 let dusts = ["Make 3 Great Throws in a row", "Make 2 Nice Curveball Throws in a row", "Make 5 Nice Throws", "Make 3 Great Throws", "Make 3 Nice Throws in a row", "Make an Excellent Throw", ""]
-
-
-
-fetch("https://cors-anywhere.herokuapp.com/")
-.then(res => {
-  if(res.statusText==="Forbidden") {
-    alert("Activate demo server!")
-    // window.location = "https://cors-anywhere.herokuapp.com/corsdemo"
-
-    fetch("https://cors-anywhere.herokuapp.com/corsdemo?accessRequest=abd73549d263ddcfa148b38acd13f2a461bd324beeea0113124dead9edb6bcc1", {
-      method: "GET",
-      referrer: "https://cors-anywhere.herokuapp.com/corsdemo",
-      mode: "no-cors"
-
-    })
-    // .then(html => html.text())
-    // .then(html => {
-    //   let test = DOMParser.parseFromString(html)
-    //   console.log(test)
-
-
-    // })
-  }
-})
 
 async function distance(coord1, coord2, unit = "K") {
   let [lat1, lon1] = coord1.split(",");
@@ -63,20 +38,16 @@ async function distance(coord1, coord2, unit = "K") {
     return dist;
   }
 }
-
 async function fetchQuest(url, questUrl) {
   try {
     let res = await fetch(
-      "https://cors-anywhere.herokuapp.com/" + url + questUrl,
-      { "x-requested-with": "fetch" }
+      `https://pokemon-api-327709.appspot.com/quests/${url}/${questUrl}`
     );
     console.log(res);
     res = await res.json();
-    return await sortQuests(res.quests);
+    return await sortQuests(res.data);
   } catch (err) {
     console.error(err + " fetchQuest()");
-    alert("Activate demo server!");
-    window.location = "https://cors-anywhere.herokuapp.com/corsdemo";
   }
 }
 
@@ -102,7 +73,10 @@ async function sortQuests(quests) {
     return [temp, popped];
   }
 
-  if (quests.length === 0) return "No quests specified. sortQuests()";
+  if (quests.length === 0) {
+    console.error("No quests specified, quest list empty. sortQuests()")
+    return quests
+  };
 
   let done = [];
   let popped;
@@ -294,6 +268,49 @@ class GetQuest extends React.Component {
   }
 }
 
+class GetTimeZones extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.date = new Date()
+  }
+
+  componentDidMount() {
+    console.log("Mounted")
+    setInterval(() => {
+      this.forceUpdate()
+    
+    }, 1000)
+  }
+
+
+
+  render() {
+    return(
+    <>
+      <div style={{ 
+        marginBottom: "30px important",
+        display: "block",
+        position: "absolute",
+        width: "100vw",
+        textAlign: "center",
+        marginBottom: "20px"
+         }}>
+        { urls.map(i => {
+          let date = new Date()
+          return (
+            <p>{ `${i.name} ${date.toLocaleString("en-CA", { timeZone: i.timeZone, hour12: true })}` }</p>
+        
+          )
+        
+            }) }
+      </div>
+    </>
+    )
+  }
+}
+
+
 class ConvertToGpx extends React.Component {
   constructor(props) {
     super(props);
@@ -361,20 +378,12 @@ class ConvertToGpx extends React.Component {
           />
           <input type="submit" value="Get .gpx file" className="gpx-submit" />
         </form>
-
-        <a
-          style={{ display: "none" }}
-          download={"test.gpx"}
-          href={this.state.fileDownloadUrl}
-          ref={(e) => (this.dofileDownload = e)}
-        >
-          download it
-        </a>
       </>
     );
   }
 }
 // component
+
 export default function App() {
   /* Functions */
   // const copyToClipboard = (text) => {
@@ -390,6 +399,8 @@ export default function App() {
     <>
       <ConvertToGpx />
       <GetQuest />
+      <GetTimeZones />
+
     </>
   );
 }

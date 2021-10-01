@@ -59,36 +59,60 @@
           "category": "Pokemon Encounter",
           "rewards": [
             {
-              "reward": "✨Larvitar✨",
+              "reward": "👍Spinda✨",
+              "literal": "quests[]=7%2C0%2C327"
+            },
+            {
+              "reward": "🪨Larvitar✨",
               "literal": "quests[]=7%2C0%2C246"
             },
             {
-              "reward": "✨Dratini✨",
+              "reward": "🪨Sudowoodo✨",
+              "literal": "quests[]=7%2C0%2C185"
+            },
+            {
+              "reward": "🐉Dratini✨",
               "literal": "quests[]=7%2C0%2C147"
             },
             {
-              "reward": "✨Spinda✨",
-              "literal": "quests[]=7%2C0%2C327"
+              "reward": "🐉Gible✨",
+              "literal": "quests[]=7%2C0%2C443"
+            },
+            {
+              "reward": "🐉Bagon✨",
+              "literal": "quests[]=7%2C0%2C371"
+            },
+            {
+              "reward": "💧Magikarp✨",
+              "literal": "quests[]=7%2C0%2C129"
+            },
+            {
+              "reward": "🔩Beldum✨",
+              "literal": "quests[]=7%2C0%2C374"
             }
           ]
         }
     ],
     "urls": [
         {
+          "name": "🇰🇷Singapore🇰🇷",
+          "url": "sgpokemap.com/quests.php",
+          "timeZone": "Asia/Singapore"
+        },
+        {
           "name": "🗽New York🗽",
-          "url": "nycpokemap.com/quests.php?"
+          "url": "nycpokemap.com/quests.php",
+          "timeZone": "America/New_York"
         },
         {
           "name": "🇨🇦Vancouver🇨🇦",
-          "url": "vanpokemap.com/quests.php?"
+          "url": "vanpokemap.com/quests.php",
+          "timeZone": "America/New_York"
         },
         {
           "name": "🇬🇧London🇬🇧",
-          "url": "londonpogomap.com/quests.php?"
-        },
-        {
-          "name": "🇰🇷Singapore🇰🇷",
-          "url": "sgpokemap.com/quests.php?"
+          "url": "londonpogomap.com/quests.php",
+          "timeZone": "Europe/London"
         }
       ]
 }
